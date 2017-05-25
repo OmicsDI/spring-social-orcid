@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.europepmc.springframework.social.orcid.api.impl.OrcidApiImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.springframework.context.support.GenericApplicationContext;
@@ -13,7 +14,6 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import org.springframework.social.orcid.api.impl.OrcidApiImpl;
 import org.springframework.test.web.client.MockRestServiceServer;
 
 /**

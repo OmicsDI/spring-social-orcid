@@ -21,6 +21,6 @@
   		</beans:property>
 	</beans:bean>    
 	
-    <beans:import resource="classpath:/org/springframework/social/orcid/configuration.xml" />	
+    <beans:import resource="classpath:/org/europepmc/springframework/social/orcid/configuration.xml" />	
         
 </beans:beans>
