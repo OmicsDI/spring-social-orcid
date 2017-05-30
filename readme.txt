@@ -72,5 +72,5 @@ Note: Spring Social ORCID currently supports ORCID API version 2.0
 http://docs.spring.io/spring-social/docs/1.1.0.RELEASE/reference/htmlsingle/#section_implementing
 
 2. ORCID
-http://members.orcid.org/api/tokens-through-3-legged-oauth-authorization
-https://members.orcid.org/api/tutorial-retrieve-data-orcid-record-curl-12-and-earlier
+https://members.orcid.org/api/oauth/3legged-oauth
+https://members.orcid.org/api/tutorial/read-orcid-records
