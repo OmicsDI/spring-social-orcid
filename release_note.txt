@@ -1,4 +1,10 @@
 ------------------------
+Release date: 2017-05-30
+Release tag: spring-social-orcid-2.0.0
+Release note: 
+	Upgrade spring-social-orcid to comply with ORCID API v2.0
+
+------------------------
 Release date: 2016-06-24
 Release tag: spring_social_orcid_r1_1_0
 Release note: 
