@@ -26,9 +26,9 @@ dependency in the pom.xml file, which will add Spring Social ORCID to your proje
 local Maven repository:
 
 <dependency>
-  <groupId>org.springframework.social</groupId>
+  <groupId>org.europepmc</groupId>
   <artifactId>spring-social-orcid</artifactId>
-  <version>1.1.0</version>
+  <version>2.0.0</version>
 </dependency>
 
 As an extension to Spring Social, Spring Social ORCID depends on Spring Social.
@@ -63,6 +63,8 @@ orcid.apiUrl=https://api.orcid.org/v${orcid.messageSchemaVersion}/
 orcid.pubApiUrl=https://pub.orcid.org/v${orcid.messageSchemaVersion}/
 orcid.authorizeUrl=https://orcid.org/oauth/authorize
 orcid.accessTokenUrl=https://api.orcid.org/oauth/token
+
+Note: Spring Social ORCID currently supports ORCID API version 2.0
 
 # eferences:
 
