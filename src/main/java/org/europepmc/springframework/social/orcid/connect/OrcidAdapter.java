@@ -1,6 +1,7 @@
 package org.europepmc.springframework.social.orcid.connect;
 
 import org.europepmc.springframework.social.orcid.api.OrcidApi;
+import org.europepmc.springframework.social.orcid.jaxb.beans.Name;
 import org.europepmc.springframework.social.orcid.jaxb.beans.Record;
 import org.europepmc.springframework.social.orcid.utils.OrcidConfigBroker;
 import org.europepmc.springframework.social.orcid.utils.StringUtility;
@@ -29,9 +30,17 @@ public class OrcidAdapter implements ApiAdapter<OrcidApi> {
 	public void setConnectionValues(OrcidApi orcidApi, ConnectionValues values) {
 		Record profile = orcidApi.messageOperations().getOrcidProfile();
 		values.setProviderUserId(profile.getOrcidIdentifier().getPath());
-				
-		String givenName = profile.getPerson().getName().getGivenNames().getValue();
-		String familyName = profile.getPerson().getName().getFamilyName().getValue();
+
+		String givenName = "";
+		String familyName = "";
+
+		Name name = profile.getPerson().getName();
+		if(null!=name){
+			if(null!=name.getGivenNames())
+				givenName = name.getGivenNames().getValue();
+			if(null!=name.getFamilyName())
+				familyName = name.getFamilyName().getValue();
+		}
 		String displayName = givenName;
 		if (StringUtility.hasContent(familyName)) {
 		    if (StringUtility.hasContent(displayName)) {
