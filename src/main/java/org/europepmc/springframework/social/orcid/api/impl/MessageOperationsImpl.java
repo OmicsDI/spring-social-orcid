@@ -1,5 +1,7 @@
 package org.europepmc.springframework.social.orcid.api.impl;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,6 +17,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 import org.springframework.util.Assert;
@@ -53,6 +56,16 @@ public class MessageOperationsImpl extends AbstractOrcidOperations implements Me
 	        restTmp = restTemplate;
 	    }
 		url += orcidId + "/record";
+
+        final String proxyHost = System.getProperty("http.proxyHost");
+        final String proxyPort = System.getProperty("http.proxyPort");
+
+        if (proxyHost != null && proxyPort != null) {
+            SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+            Proxy proxy= new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, Integer.parseInt(proxyPort)));
+            requestFactory.setProxy(proxy);
+            restTmp.setRequestFactory(requestFactory);
+        }
 
 		// Set XML content type explicitly to force response in XML (If not spring gets response in JSON)
 		HttpHeaders headers = new HttpHeaders();
