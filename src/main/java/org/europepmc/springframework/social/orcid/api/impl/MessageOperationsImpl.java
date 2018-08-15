@@ -40,6 +40,17 @@ public class MessageOperationsImpl extends AbstractOrcidOperations implements Me
 		this.restTemplate = restTemplate;
 		this.accessToken = accessToken;
 		this.pubRestTemplate = new RestTemplate();
+
+        final String proxyHost = System.getProperty("http.proxyHost");
+        final String proxyPort = System.getProperty("http.proxyPort");
+
+        if (proxyHost != null && proxyPort != null) {
+            SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+            Proxy proxy= new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, Integer.parseInt(proxyPort)));
+            requestFactory.setProxy(proxy);
+            this.restTemplate.setRequestFactory(requestFactory);
+            this.pubRestTemplate.setRequestFactory(requestFactory);
+        }
 	}
 
 	@Override
@@ -56,16 +67,6 @@ public class MessageOperationsImpl extends AbstractOrcidOperations implements Me
 	        restTmp = restTemplate;
 	    }
 		url += orcidId + "/record";
-
-        final String proxyHost = System.getProperty("http.proxyHost");
-        final String proxyPort = System.getProperty("http.proxyPort");
-
-        if (proxyHost != null && proxyPort != null) {
-            SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-            Proxy proxy= new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, Integer.parseInt(proxyPort)));
-            requestFactory.setProxy(proxy);
-            restTmp.setRequestFactory(requestFactory);
-        }
 
 		// Set XML content type explicitly to force response in XML (If not spring gets response in JSON)
 		HttpHeaders headers = new HttpHeaders();
