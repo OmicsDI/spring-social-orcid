@@ -23,16 +23,7 @@ import javax.xml.bind.annotation.XmlValue;
  * <p>Java class for amount complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="amount">
- *   &lt;simpleContent>
- *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
- *       &lt;attribute name="currency-code" use="required" type="{http://www.orcid.org/ns/common}currency-code" />
- *     &lt;/extension>
- *   &lt;/simpleContent>
- * &lt;/complexType>
- * </pre>
+ *
  * 
  * 
  */

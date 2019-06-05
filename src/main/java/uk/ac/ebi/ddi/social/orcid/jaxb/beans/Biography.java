@@ -27,22 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for biography complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="biography">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.orcid.org/ns/common}created-date" minOccurs="0"/>
- *         &lt;element ref="{http://www.orcid.org/ns/common}last-modified-date" minOccurs="0"/>
- *         &lt;element name="content" type="{http://www.orcid.org/ns/common}non-empty-string"/>
- *       &lt;/sequence>
- *       &lt;attribute name="visibility" type="{http://www.orcid.org/ns/common}visibility" />
- *       &lt;attribute name="path" type="{http://www.orcid.org/ns/common}element-path" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ *
  * 
  * 
  */

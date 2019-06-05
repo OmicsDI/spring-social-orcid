@@ -26,21 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for citation complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="citation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="citation-type" type="{http://www.orcid.org/ns/work}citation-type"/>
- *         &lt;element name="citation-value" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "citation", namespace = "http://www.orcid.org/ns/work", propOrder = {

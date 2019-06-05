@@ -21,24 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.orcid.org/ns/common}last-modified-date" minOccurs="0"/>
- *         &lt;element name="educations" type="{http://www.orcid.org/ns/activities}educations" minOccurs="0"/>
- *         &lt;element name="employments" type="{http://www.orcid.org/ns/activities}employments" minOccurs="0"/>
- *         &lt;element name="fundings" type="{http://www.orcid.org/ns/activities}fundings" minOccurs="0"/>
- *         &lt;element name="peer-reviews" type="{http://www.orcid.org/ns/activities}peer-reviews" minOccurs="0"/>
- *         &lt;element name="works" type="{http://www.orcid.org/ns/activities}works" minOccurs="0"/>
- *       &lt;/sequence>
- *       &lt;attribute name="path" type="{http://www.orcid.org/ns/common}element-path" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
+ *
  * 
  * 
  */
